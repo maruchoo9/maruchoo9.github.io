@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Encode Sans', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+.toggle-menu {
+    width: 40px;
+    position: absolute;
+    right: 1em;
+    top: .5em;
+    cursor: pointer;
+    z-index: 10;
+    filter: invert(1);
+}
+
+@media screen and (min-width: 768px) {
+    .toggle-menu {
+        display: none;
+    }
+}
+
+.main-menu__item {
+    padding: 1rem;
+}
+
+
+.main-menu {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #313132;
+    transition: .3s;
+    transform: translateY(-100%);
+}
+
+.main-menu__item {
+    padding: 1rem;
+}
+
+.main-menu--show {
+    transform: translateY(0);
+}
+
+.toggle-menu__checkbox:checked + .main-menu {  /** el + es para que seleccione al hermano, y haga lo siguiente **/
+    transform: translateY(23%);
+}
+
+.toggle-menu__checkbox {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .main-menu {
+        flex-direction: row;
+        transform: translateY(0);
+        justify-content: center;
+    }
+
+    .main-menu__item {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+.main-menu__link {
+    color: rgb(231, 231, 231);
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.main-menu__link:hover {
+    font-size: 19px;
+}
+
+.logoup {
+    position: absolute;
+    width: 40px;
+    top: 6px;
+    left: 45%;
+}
+
+.logoup-responsive {
+    position: absolute;
+    width: 35px;
+    top: 5px;
+    left: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+
+.carrito {
+    position: absolute;
+    width: 45px;
+    top: 9px;
+    left: 5px;
+}
+
+.barrita {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    top: 0px;
+    background-color: #313132;
+}
+
+.carrito-responsive {
+    position: absolute;
+    width: 45px;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.carrito-responsive:hover {
+    opacity: .7;
+}
+
+.carrito {
+    display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+    .barrita {
+        display: none;
+    }
+
+    .carrito {
+        position: absolute;
+        width: 45px;
+        top: 9px;
+        right: 5px;
+        left: 0px;
+    }
+
+    .logoup {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carrito {
+        display: block;
+    }
+
+    .carrito-responsive {
+        display: none;
+    }
+
+    .logoup-responsive {
+        display: none;
+    }
+}
+
+.homero {
+    position: absolute;
+    width: 36px;
+    top:0px;
+    left: 40px;
+    transform: translateY(-100%);
+}
+
+
+.logoup-responsive:hover + .homero {
+    opacity: .5;
+    transform: translateY(0);
+}
+
+.productos {
+    text-align: center;
+}
